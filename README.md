@@ -124,6 +124,9 @@ Görselleştirmeler, ilgili oyunun sağladığı telemetri alanlarına göre ça
 * Python 3 (kaynak koddan çalıştırmak için)
 * USB bağlantısı (Arduino özellikleri için)
 * Desteklenen yarış simülasyonlarından biri
+* Tamamen yerelde internete bağlanmadan çalışır
+
+
 
 Arduino donanımı yalnızca fiziksel geri bildirim özellikleri için gereklidir.
 
@@ -250,3 +253,5 @@ Bilinen hatalar
 PitApex — Beyond Telemetry. Feel the Race.
 
 Turn racing data into real feedback.
+
+https://github.com/ziya44-a/pedal-ffb-motor-yaz-l-m- ilk sürüme buradan ulaşabilirsiniz.
