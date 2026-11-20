@@ -10,7 +10,8 @@ PitApex; özelleştirilebilir donanım kontrolü, sade bir kullanıcı arayüzü
 **Platform:** Windows  
 **Dil:** Türkçe / English  
 **Geliştirme durumu:** Aktif geliştirme
-
+Yapay zeka yardımıyla üretilmiştir
+Yerelde çalısıp hiçbir sekilde internete bağlanmamaktadır
 ---
 
 ## Desteklenen Simülasyonlar
@@ -220,10 +221,13 @@ Uygulama açıldığında istediğiniz oyun, donanım ve telemetri ayarlarını 
 4. Firmware'i karta yükleyin.
 5. Arduino'yu USB üzerinden bilgisayara bağlayın.
 6. PitApex içerisinden uygun seri portu seçin.
+7. Dosyalar içinde arduino kodu bulunmaktadır elle kurulum gerekebilir
+8. <img width="1066" height="68" alt="Ekran görüntüsü 2026-11-20 125422" src="https://github.com/user-attachments/assets/b215ea11-7393-402c-bcdc-394e03e5b69c" />
+
 
 Motorların ve fanların bağlantısını kullandığınız motor sürücü kartının elektriksel sınırlarına uygun yapın.
 
-**Uyarı:** L293D motor sürücüsüne yüksek akım çeken fanları veya motorları doğrudan bağlamayın. Uygun harici sürücü kullanın.
+**Uyarı:** L293D motor sürücüsüne yüksek akım çeken fanları veya motorları doğrudan bağlamayın 12v öalısan FAN ve Motorlar önerilir. Uygun harici sürücü kullanın.
 
 ## LED Matrix Kurulumu
 
@@ -250,6 +254,8 @@ PitApex içerisindeki LED sekmesinden COM portunu seçerek bağlantıyı kurun.
 Bağlantı pinleri kullanılan karta göre değiştirilebilir. Arduino firmware'indeki pin tanımlarını kontrol edin.
 
 ---
+<img width="2559" height="1392" alt="Ekran görüntüsü 2026-11-20 125325" src="https://github.com/user-attachments/assets/cecf6159-6f92-4e79-b820-d6b2cbe8d5fa" />
+
 
 #  EXE Oluşturma
 
@@ -309,6 +315,7 @@ Bu testler; telemetri işleme, kayıt sistemi, LED desenleri, pedal efektleri ve
 
 ---
 
+
 #  Language Support
 
 PitApex supports Turkish and English.
@@ -350,11 +357,19 @@ Bilinen hatalar
  Ac ve Acc de test edilebilmiştir sadece 
  Led kısmında da geliştirmeler devam etmektedir
  
-
-
+Uygulamanın il sürümü https://github.com/ziya44-a/pedal-ffb-motor-yaz-l-m- buradaki gibidir
+ ve sadece pedal ffb kitinde ABS TC Tekerlek kayması ve kilitlenmesi vardır
 
 PitApex — Beyond Telemetry. Feel the Race.
 
 Turn racing data into real feedback.
 
 https://github.com/ziya44-a/pedal-ffb-motor-yaz-l-m- ilk sürüme buradan ulaşabilirsiniz.
+
+<img width="2559" height="1389" alt="Ekran görüntüsü 2026-11-20 125253" src="https://github.com/user-attachments/assets/58d4d0ed-1be3-404a-a7e4-f1d5c35fceab" />
+<img width="1090" height="926" alt="Ekran görüntüsü 2026-11-20 125235" src="https://github.com/user-attachments/assets/cb888d0f-aa88-4a96-ae39-f089d64a5761" />
+<img width="2559" height="1392" alt="Ekran görüntüsü 2026-11-20 125325" src="https://github.com/user-attachments/assets/bb13d1fb-f603-4b3a-887a-591b2223e9ae" />
+<img width="2559" height="1382" alt="Ekran görüntüsü 2026-11-20 125341" src="https://github.com/user-attachments/assets/c284b016-4960-4065-86ed-e21128b49cca" />
+<img width="2559" height="1385" alt="Ekran görüntüsü 2026-11-20 125347" src="https://github.com/user-attachments/assets/bcd35b46-12d7-43c0-87c5-fe9966d8eb32" />
+<img width="2559" height="1392" alt="Ekran görüntüsü 2026-11-20 125401" src="https://github.com/user-attachments/assets/ee9fe451-71bb-4af3-af50-2147bbce394c" />
+<img width="2559" height="1393" alt="Ekran görüntüsü 2026-11-20 125336" src="https://github.com/user-attachments/assets/13216824-d57d-4632-b55c-5f1e4932c0e3" />
