@@ -1,251 +1,353 @@
-# PitApex-telemetri-ve-pedal-fan-arduino-tabanli-kontrolc-
-PitApex; Arduino tabanlı pedal titreşimi, hıza duyarlı kokpit fanı kontrolü, özelleştirilebilir arayüz katmanları (overlay), araç durumu görselleştirme ve tur rekoru takibi özelliklerini barındıran bir simülasyon yarışı telemetri ve dokunsal geri bildirim uygulamasıdır. ACC, AC, LMU ve iRacing oyunlarını destekler.
+# 🏁 PitApex
+### Open-Source Sim Racing Telemetry & Hardware Control
 
+**PitApex**, sim racing deneyimini geliştirmek için tasarlanmış, açık kaynaklı bir Windows uygulamasıdır.
 
-🏁 PitApex
+Pedal titreşim sistemleri, hıza duyarlı kokpit fanları, 8×8 LED göstergeler, yarış telemetrisi, oyun içi overlay pencereleri ve tur rekorlarını tek bir uygulama üzerinden yönetmeyi amaçlar.
 
-Sim Racing Telemetry • Haptic Feedback • Cockpit Fan Control
+PitApex; özelleştirilebilir donanım kontrolü, sade bir kullanıcı arayüzü ve modüler yazılım mimarisi üzerine geliştirilmiştir.
 
-PitApex, simülasyon yarışları için geliştirilmiş, gerçek zamanlı telemetri takibi, Arduino tabanlı pedal titreşimleri, hıza duyarlı kokpit fanı ve sürüş performansı analizini tek bir uygulamada birleştiren Windows yazılımıdır.
+**Platform:** Windows  
+**Dil:** Türkçe / English  
+**Geliştirme durumu:** Aktif geliştirme
 
-Yarış simülasyonlarından alınan verileri fiziksel geri bildirimlere dönüştürerek sürüş deneyimini geliştirmeyi ve pilotlara daha kapsamlı performans bilgileri sunmayı amaçlar.
+---
 
-🎮 Desteklenen oyunlar
+## 🎮 Desteklenen Simülasyonlar
 
-Simülasyon	Telemetri
-Assetto Corsa Competizione	✅
-Assetto Corsa	✅
-Le Mans Ultimate	✅
-iRacing	✅
+- Assetto Corsa Competizione (ACC)
+- Assetto Corsa (AC)
+- Le Mans Ultimate (LMU)
+- iRacing
+  Testler AC ve ACC de yapıldı, LMU da yapılacaktrı
+Oyunların telemetri altyapıları farklıdır. Bazı özellikler yalnızca belirli oyunlarda kullanılabilir. Deneysel entegrasyonların gerçek oyun ortamında doğrulanması gerekir.
 
-Telemetri desteği oyunların sağladığı verilere bağlıdır. Bazı özellikler belirli oyunlarda kullanılamayabilir.
+---
 
-⚙️ Özellikler
+## ⚙️ Temel Özellikler
 
-1. Pedal Haptic Feedback
+### 1. Pedal Haptic Feedback
 
-Arduino ve L293D Motor Shield kullanılarak pedallara fiziksel titreşim geri bildirimi sağlanır.
+Arduino ve motor sürücü kartlarıyla çalışan pedal titreşim sistemi.
 
 Desteklenen efektler:
 
-* ABS aktivasyonu
-* Traction Control (TC)
-* Tekerlek kayması
-* Tekerlek kilitlenmesi
-* Fren limiti uyarısı
-* Vites yükseltme
-* Vites düşürme
+- ABS aktivasyonu
+- Traction Control (TC)
+- Tekerlek kayması
+- Tekerlek kilitlenmesi
+- Brake Limiter
+- Vites yükseltme (Gear Up)
+- Vites düşürme (Gear Down)
 
-Uygulama toplam 9 bağımsız efekt kontrolü içerir.
+Her efekt bağımsız olarak açılıp kapatılabilir.
 
-Her efekt için motor gücü, frekans, eşik, süre ve hassasiyet gibi ayarlar özelleştirilebilir. Efektler birbirinden bağımsız açılıp kapatılabilir.
+Kullanıcı; motor gücü, aktivasyon eşiği, hassasiyet, titreşim süresi ve motor çıkışlarını özelleştirebilir.
 
-2. Hıza Duyarlı Kokpit Fanı
+Motor çıkışları M1–M4 üzerinden yönetilebilir. Aynı motor çıkışının birden fazla fiziksel cihaz tarafından kullanılmasına karşı çakışma kontrolü bulunur.
 
-Araç hızına göre fan gücünü otomatik değiştiren Arduino tabanlı kontrol sistemi.
+### 2. Speed-Based Fan Control
 
-* Gerçek zamanlı hız takibi
-* Özelleştirilebilir hız/fan gücü eğrisi
-* Minimum ve maksimum güç sınırları
-* Yumuşak hız geçişleri
-* Fan kalkış desteği
-* Manuel test modu
-* Telemetri bağlantısı kesildiğinde güvenlik kontrolü
+Araç hızına göre çalışan kokpit fan sistemi.
 
-Fan sistemi pedal efektlerinden bağımsız kullanılabilir.
+Özellikler:
 
-3. Gerçek Zamanlı Telemetri
+- Araç hızına bağlı otomatik fan kontrolü
+- İki bağımsız fan desteği
+- Özelleştirilebilir fan hız eğrileri
+- Minimum ve maksimum güç ayarları
+- Fan test sistemi
+- Telemetri kesildiğinde güvenli davranış seçenekleri
 
-Desteklenen oyunlardan alınan sürüş bilgileri tek bir arayüzde görüntülenir.
+Fan kontrolü için uygun Arduino motor sürücüsü ve fan donanımı gereklidir.
 
-* Hız, RPM ve vites
-* Gaz ve fren kullanımı
-* Yakıt miktarı
-* Lastik sıcaklıkları ve basınçları
-* Tur ve sektör süreleri
-* Pist ve araç bilgileri
-* Desteklenen oyunlarda ABS ve TC bilgileri
+### 3. 8×8 LED Matrix System
 
-Oyun tarafından sağlanmayan veya doğrulanamayan veriler tahmin edilmez; veri bulunamadığı belirtilir.
+PitApex, MAX7219 tabanlı 8×8 LED matrisleri için bağımsız bir kontrol sistemi içerir.
 
-4. Tur Süreleri ve Rekor Sistemi
+**Vites göstergesi**
 
-Sürüş performansını takip etmek için kalıcı tur kayıt sistemi.
+- R, N ve 1–9 vitesleri
+- Özelleştirilebilir LED desenleri
+- Parlaklık ve ekran yönü ayarları
 
-* Anlık tur süresi
-* Son tur süresi
-* En iyi tur
-* Sektör süreleri
-* Pist ve araç bazlı rekorlar
-* Önceki oturumların saklanması
-* Geçersiz veya şüpheli turların filtrelenmesi
+**Yarış bayrakları**
 
-Rekorlar oyun, pist ve araç modeline göre ayrı saklanır.
+- Yeşil, sarı ve çift sarı
+- Mavi, beyaz, kırmızı ve siyah
+- Siyah-beyaz uyarı ve siyah-turuncu mekanik arıza
+- Son tur ve damalı bayrak
+- Bağımsız test ve desen seçenekleri
 
-Oyun kapatılsa bile tamamlanan oturumların verileri korunur. Oyun geçerlilik bilgisi sunmuyorsa ilgili kayıtlar doğrulanmamış olarak işaretlenebilir.
+**Araç yakınlık uyarıları**
 
-5. Özelleştirilebilir Overlay Sistemi
+- Soldan araç: `[` deseni
+- Sağdan araç: `]` deseni
+- Her iki taraftan araç: `[ ]`
+- Arkadan araç: En alt LED sırası
 
-PitApex, oyun üzerinde kullanılabilen bağımsız bilgi pencereleri sunar.
+**Araç ayarı değişiklikleri**
 
-* Hız göstergesi
-* Gaz ve fren telemetrisi
-* RPM ve vites göstergesi
-* Tur süresi bilgileri
+TC, ABS, TC2 ve ECU Map gibi desteklenen sayısal ayar değişiklikleri LED üzerinde gösterilebilir.
 
-Birden fazla overlay aynı anda açılabilir. Pencereler taşınabilir ve konumları kaydedilir.
+- Yeşil: Değer artırıldı
+- Kırmızı: Değer azaltıldı
 
-6. Araç Durumu ve Lastik Takibi
+Brake Bias, 8×8 matris üzerinde ondalıklı değerlerin okunabilirlik sınırı nedeniyle bu göstergeden çıkarılmıştır.
 
-Araç durumunu takip etmeyi kolaylaştıran görsel paneller.
+**LED özelleştirme**
 
-* Üstten araç görünümü
-* Bölgesel hasar gösterimi
-* Lastik sıcaklıkları
-* Lastik basınçları
-* Kademeli renk göstergeleri
+- Her LED pikselini ayrı düzenleme
+- Gösterge bazında bağımsız renk ve test seçenekleri
+- Yanıp sönme ayarları
+- Sabit LED önizlemesi
+- Yalnızca LED ayarlarını sıfırlama
 
-Görselleştirmeler, ilgili oyunun sağladığı telemetri alanlarına göre çalışır.
+**Donanım notu:** Standart MAX7219 tek renkli matrislerde RGB renk değişimi mümkün değildir. Renk seçenekleri yazılım önizlemesinde gösterilir. Fiziksel çok renkli görüntü için farklı RGB donanımı ve uygun firmware gerekir.
 
-7. Kullanıcı Arayüzü ve Veri Yönetimi
+Oyun içi bayrak ve yakınlık olaylarının otomatik algılanması, oyun bazında telemetri desteğine bağlıdır.
 
-* Siyah ve beyaz tema
-* Bağımsız özellik panelleri
-* Kullanıcı profilleri
-* Kalıcı ayarlar
-* Oturum geçmişi
-* Otomatik veri yedekleme
-* Bozuk kayıtlar için kurtarma mekanizması
-* Onay gerektiren veri temizleme seçeneği
+### 4. Live Telemetry
 
-💻 Sistem Gereksinimleri
+PitApex, oyunların sunduğu telemetri verilerini okuyarak aşağıdaki bilgileri görüntülemeyi hedefler:
 
-* Windows
-* Python 3 (kaynak koddan çalıştırmak için)
-* USB bağlantısı (Arduino özellikleri için)
-* Desteklenen yarış simülasyonlarından biri
-* Tamamen yerelde internete bağlanmadan çalışır
+- Anlık hız ve vites
+- Motor devri
+- Gaz ve fren yüzdesi
+- Tur ve sektör süreleri
+- Yakıt bilgileri
+- Lastik sıcaklıkları ve basınçları
+- Desteklenen araç durum bilgileri
 
+Bir oyun belirli bir telemetri alanını sunmuyorsa PitApex o bilgiyi tahmin ederek üretmez.
 
+### 5. In-Game Overlays
 
-Arduino donanımı yalnızca fiziksel geri bildirim özellikleri için gereklidir.
+Oyun üzerinde kullanılabilen bağımsız bilgi pencereleri:
 
-📥 Kurulum
+- Pedal telemetrisi
+- Hız ve devir bilgileri
+- Vites göstergesi
+- Tur zamanları
+- Desteklenen hava ve lastik verileri
 
-1. Projeyi indirin
+Overlay pencereleri taşınabilir ve konumları kaydedilebilir.
 
-GitHub üzerinden projeyi ZIP olarak indirin ve bilgisayarınıza çıkarın.
+**Not:** Exclusive fullscreen modunda overlay görünürlüğü garanti edilmez. Borderless Windowed modu önerilir.
 
-2. Gerekli yazılımları kurun
+### 6. Lap Records & Session Management
 
-Bilgisayarınızda Python 3 kurulu olmalıdır.
+Tur ve oturum yönetimi özellikleri:
 
-PitApex klasöründe bulunan 1_kurulum.bat dosyasını çalıştırın.
+- Anlık ve tamamlanan tur süreleri
+- Kişisel pist rekorları
+- Araç ve pist bazında kayıt
+- Oturum geçmişi
+- Önceki tur kayıtlarını koruma
+- Geçersiz tur filtreleme
+- Kalıcı veri depolama
 
-Alternatif olarak terminal üzerinden:
+Oyun telemetrisi kesildiğinde son oturum bilgileri korunacak şekilde tasarlanmıştır.
 
+### 7. Customizable Interface
+
+- Koyu ve açık tema
+- Türkçe ve İngilizce arayüz
+- Kaydırılabilir ayar sayfaları
+- Bağımsız donanım kontrol sekmeleri
+- LED piksel editörü
+- Kayıtlı ayarlar ve profiller
+- PitApex özel uygulama logosu
+
+---
+
+# 💻 Installation / Kurulum
+
+## 1. Sistem Gereksinimleri
+
+**İşletim sistemi:** Windows 10 veya Windows 11  
+**Python:** Python 3 (kaynak koddan çalıştırmak için)  
+**Bağlantı:** USB üzerinden Arduino (donanım özellikleri için)
+
+Python paketleri:
+
+- pyserial
+- Pillow
+- PyInstaller (yalnızca EXE oluşturmak için)
+
+### 2. Dosyaları İndirin
+
+GitHub deposundan en güncel sürümü ZIP olarak indirin veya depoyu bilgisayarınıza klonlayın.
+
+ZIP dosyasını çıkardıktan sonra `PitApex` klasörünü açın.
+
+### 3. Gerekli Paketleri Kurun
+
+Önce Python 3'ün bilgisayarınızda kurulu olduğundan emin olun.
+
+Ardından proje klasöründe terminal açarak:
+
+```bash
 py -m pip install -r requirements.txt
+```
 
-3. Uygulamayı başlatın
+komutunu çalıştırın.
 
-2_baslat.bat dosyasını çalıştırın.
+Alternatif olarak `1_kurulum.bat` dosyasını çalıştırabilirsiniz. Ancak bu dosya mevcut sürümde yalnızca `pyserial` kurar. Pillow için yukarıdaki komut önerilir.
 
-Alternatif olarak:
+### 4. Uygulamayı Başlatın
 
+`2_baslat.bat` dosyasına çift tıklayın.
+
+Alternatif:
+
+```bash
 py main.py
+```
 
-4. EXE oluşturma (isteğe bağlı)
+Uygulama açıldığında istediğiniz oyun, donanım ve telemetri ayarlarını yapılandırabilirsiniz.
 
-Windows üzerinde bağımsız bir çalıştırılabilir dosya oluşturmak için:
+---
 
-3_exe_olustur.bat
+# 🔌 Arduino Setup
 
-Derleme başarılı olursa PitApex.exe oluşturulur.
+## Pedal ve Fan Sistemi
 
-Bu işlem, Python kurulumu gerektirmeyen bir dağıtım dosyası oluşturmayı amaçlar.
+1. Arduino IDE'yi kurun.
+2. `firmware/PedalHaptic/PedalHaptic.ino` dosyasını açın.
+3. Arduino kartınızı ve COM portunu seçin.
+4. Firmware'i karta yükleyin.
+5. Arduino'yu USB üzerinden bilgisayara bağlayın.
+6. PitApex içerisinden uygun seri portu seçin.
 
-🔌 Arduino ve Motor Kurulumu
+Motorların ve fanların bağlantısını kullandığınız motor sürücü kartının elektriksel sınırlarına uygun yapın.
 
-Gerekli donanımlar
+**Uyarı:** L293D motor sürücüsüne yüksek akım çeken fanları veya motorları doğrudan bağlamayın. Uygun harici sürücü kullanın.
 
-* Arduino Uno
-* L293D Motor Shield
-* 12V DC titreşim motorları
-* Uygun 12V güç kaynağı
-* İsteğe bağlı uyumlu DC fan
+## LED Matrix Kurulumu
 
-Firmware yükleme
+LED matrisi için ayrı bir Arduino kullanılır.
 
-1. Arduino IDE’yi açın.
-2. Arduino’yu USB ile bilgisayara bağlayın.
-3. firmware/PedalHaptic/PedalHaptic.ino dosyasını açın.
-4. Kart ve COM portunu seçin.
-5. Firmware’i Arduino’ya yükleyin.
-6. PitApex’i başlatın.
-7. İlgili bağlantı ve efekt ayarlarını yapılandırın.
+Gerekli bileşenler:
 
-Motor bağlantıları
+- Arduino uyumlu kontrol kartı
+- 8×8 LED matris
+- USB bağlantı kablosu
+- Bağlantı kabloları
 
-Kanal	Kullanım
-M1	Pedal titreşim motoru
-M2	Pedal titreşim motoru
-M3	Kokpit fanı (varsayılan)
-M4	Alternatif fan kanalı
 
-Fan kanalını değiştirmek için firmware içerisindeki FAN_MOTOR tanımı düzenlenebilir.
+Arduino IDE üzerinden **LedControl** kütüphanesini kurun.
 
-Dikkat: L293D sürücüsünün kanal başına sürekli akım kapasitesi yaklaşık 0,6 A’dir. Yüksek akımlı fanlar doğrudan bağlanmamalıdır. Fan ve güç kaynağı uyumluluğunu bağlantıdan önce kontrol edin.
+Ardından:
 
-📂 Veri Depolama
+`firmware/LedMatrix/LedMatrix.ino`
 
-PitApex kullanıcı verilerini Windows Belgeler klasöründe saklar.
+dosyasını Arduino'ya yükleyin.
 
-Belgeler/
+PitApex içerisindeki LED sekmesinden COM portunu seçerek bağlantıyı kurun.
+
+Bağlantı pinleri kullanılan karta göre değiştirilebilir. Arduino firmware'indeki pin tanımlarını kontrol edin.
+
+---
+
+# 🖥️ EXE Oluşturma
+
+Python kurulu bir Windows bilgisayarda:
+
+`3_exe_olustur.bat`
+
+dosyasını çalıştırın.
+
+Bu işlem PyInstaller kullanarak tek dosyalı bir uygulama oluşturur.
+
+Başarılı olduğunda proje klasöründe:
+
+`PitApex.exe`
+
+dosyası bulunur.
+
+EXE oluşturma işlemi Python kaynak kodundan yapılır. Arduino firmware'inin ayrıca yüklenmesi gerekir.
+
+---
+
+# 📁 Data Storage
+
+PitApex kullanıcı verilerini varsayılan olarak Windows Belgeler klasöründe saklar:
+
+```text
+Documents/
 └── PitApex/
     ├── records/
     ├── sessions/
     ├── settings/
     ├── profiles/
     └── backups/
+```
 
-Uygulama ayarları, oturum geçmişi, rekorlar ve yedekler bu klasörde tutulur.
+Kayıt sistemi; tur rekorlarını, oturum geçmişini, ayarları ve profilleri uygulama dosyalarından ayrı tutar.
 
-Veri temizleme işlemi uygulama dosyalarını silmez.
+Yeni sürüm yüklemeden önce kullanıcı verilerinizin yedeğini almanız önerilir.
 
-🧪 Test ve Geliştirme Durumu
+---
 
-PitApex aktif geliştirme aşamasındadır.
+# 🧪 Testing & Compatibility
 
-Proje; telemetri adaptörleri, tur kayıt mantığı, pedal efektleri, fan kontrolü ve veri depolama için otomatik testler içerir.
+Proje içerisinde otomatik testler bulunur.
 
 Testleri çalıştırmak için:
 
+```bash
 py -m unittest discover -s tests -t .
+```
 
-Önemli: Otomatik testler gerçek oyun ve donanım testlerinin yerini tutmaz. Özellikle LMU ve iRacing entegrasyonları, overlay davranışları ve Arduino donanım uyumluluğu gerçek kullanım ortamında ayrıca doğrulanmalıdır.
+Bu testler; telemetri işleme, kayıt sistemi, LED desenleri, pedal efektleri ve çeşitli yazılım bileşenlerini kontrol etmek için kullanılır.
 
-🛠️ Kullanılan Teknolojiler
+**Önemli:** Otomatik testlerin başarılı olması gerçek Arduino, motor, fan, LED matrisi veya desteklenen oyunların tamamında sorunsuz çalışmayı garanti etmez.
 
-* Python
-* Tkinter
-* PySerial
-* Arduino C++
-* Shared Memory Telemetry
-* JSON tabanlı veri depolama
-* Pillow
+Özellikle ACC, AC, LMU ve iRacing telemetri bağlantıları ile yeni LED uyarılarının oyun içi davranışları gerçek kullanımda ayrıca doğrulanmalıdır.
 
-🤝 Katkıda Bulunma
+---
 
-PitApex geliştirmeye ve topluluk katkılarına açıktır.
+# 🌍 Language Support
 
-Hata bildirimleri, yeni özellik önerileri, farklı simülasyonlarla uyumluluk testleri ve kod iyileştirmeleri memnuniyetle karşılanır.
+PitApex supports Turkish and English.
 
-Hata ve öneriler için GitHub Issues kullanılabilir.
+The interface language can be changed from the application settings.
+
+Some translations or newly introduced interface elements may still require additional verification.
+
+---
+
+# 🚀 Development Roadmap
+
+Gelecek geliştirmeler için hedefler:
+
+- Oyunlar arası telemetri uyumluluğunu artırmak
+- Otomatik yarış bayrağı algılamasını tamamlamak
+- Yan ve arka araç uyarılarını gerçek spotter verilerine bağlamak
+- LED gösterge önceliklerini geliştirmek
+- Daha kapsamlı overlay özelleştirmesi
+- Donanım bağlantı güvenilirliğini artırmak
+- Arayüz performansını ve çoklu dil desteğini iyileştirmek
+- Gerçek donanım test kapsamını genişletmek
+
+---
+
+# 🤝 Open Source
+
+PitApex, sim racing topluluğunun kullanımına ve geliştirme katkılarına açık bir proje olarak hazırlanmıştır.
+
+Hata bildirimleri, iyileştirme önerileri ve katkılar GitHub Issues ve Pull Requests üzerinden paylaşılabilir.
+
+---
+
+**PitApex — Control Your Hardware. Understand Your Race.**
 
 Bilinen hatalar
  Tur rekor sistemi geliştirme aşamasında olup düzgün çalışmama veya hiç çalışmama
  araç parça bilgi overlay penceresi oyunun sunduğu telemtri eksikliğinden çalışmamaktadır
  Ac ve Acc de test edilebilmiştir sadece 
+ Led kısmında da geliştirmeler devam etmektedir
  
 
 
