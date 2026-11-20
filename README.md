@@ -364,7 +364,6 @@ PitApex — Beyond Telemetry. Feel the Race.
 
 Turn racing data into real feedback.
 
-https://github.com/ziya44-a/pedal-ffb-motor-yaz-l-m- ilk sürüme buradan ulaşabilirsiniz.
 
 <img width="2559" height="1389" alt="Ekran görüntüsü 2026-11-20 125253" src="https://github.com/user-attachments/assets/58d4d0ed-1be3-404a-a7e4-f1d5c35fceab" />
 <img width="1090" height="926" alt="Ekran görüntüsü 2026-11-20 125235" src="https://github.com/user-attachments/assets/cb888d0f-aa88-4a96-ae39-f089d64a5761" />
