@@ -353,9 +353,13 @@ Hata bildirimleri, iyileştirme önerileri ve katkılar GitHub Issues ve Pull Re
 
 Bilinen hatalar
  Tur rekor sistemi geliştirme aşamasında olup düzgün çalışmama veya hiç çalışmama
+ 
  araç parça bilgi overlay penceresi oyunun sunduğu telemtri eksikliğinden çalışmamaktadır
+ 
  Ac ve Acc de test edilebilmiştir sadece 
+ 
  Led kısmında da geliştirmeler devam etmektedir
+
  Araç hasar durumu göstergesi üzerine tıklandığında gri ekran kalması sorunu var kapat aç yapınca düzelmekte 
  ilerleyen güncellemelerde düzeltilecektir
  
