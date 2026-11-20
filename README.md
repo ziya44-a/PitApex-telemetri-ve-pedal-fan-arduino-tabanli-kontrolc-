@@ -19,8 +19,9 @@ PitApex; özelleştirilebilir donanım kontrolü, sade bir kullanıcı arayüzü
 - Assetto Corsa (AC)
 - Le Mans Ultimate (LMU)
 - iRacing
-  Testler AC ve ACC de yapıldı, LMU da yapılacaktrı
-Oyunların telemetri altyapıları farklıdır. Bazı özellikler yalnızca belirli oyunlarda kullanılabilir. Deneysel entegrasyonların gerçek oyun ortamında doğrulanması gerekir.
+- Testler AC ve ACC de yapıldı, LMU da yapılacaktrı
+- Oyunların telemetri altyapıları farklıdır. Bazı özellikler yalnızca belirli oyunlarda kullanılabilir.
+- Deneysel entegrasyonların gerçek oyun ortamında doğrulansa bile sorunsuz çalışması için daha uğrasılmaktadır.
 
 ---
 
