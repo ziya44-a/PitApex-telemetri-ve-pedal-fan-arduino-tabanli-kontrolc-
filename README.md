@@ -13,7 +13,7 @@ PitApex; özelleştirilebilir donanım kontrolü, sade bir kullanıcı arayüzü
 
 ---
 
-## 🎮 Desteklenen Simülasyonlar
+## Desteklenen Simülasyonlar
 
 - Assetto Corsa Competizione (ACC)
 - Assetto Corsa (AC)
@@ -250,7 +250,7 @@ Bağlantı pinleri kullanılan karta göre değiştirilebilir. Arduino firmware'
 
 ---
 
-# 🖥️ EXE Oluşturma
+#  EXE Oluşturma
 
 Python kurulu bir Windows bilgisayarda:
 
@@ -308,7 +308,7 @@ Bu testler; telemetri işleme, kayıt sistemi, LED desenleri, pedal efektleri ve
 
 ---
 
-# 🌍 Language Support
+#  Language Support
 
 PitApex supports Turkish and English.
 
@@ -318,7 +318,7 @@ Some translations or newly introduced interface elements may still require addit
 
 ---
 
-# 🚀 Development Roadmap
+#  Development Roadmap
 
 Gelecek geliştirmeler için hedefler:
 
