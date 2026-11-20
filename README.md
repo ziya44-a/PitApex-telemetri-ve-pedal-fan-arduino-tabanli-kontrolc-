@@ -356,6 +356,8 @@ Bilinen hatalar
  araç parça bilgi overlay penceresi oyunun sunduğu telemtri eksikliğinden çalışmamaktadır
  Ac ve Acc de test edilebilmiştir sadece 
  Led kısmında da geliştirmeler devam etmektedir
+ Araç hasar durumu göstergesi üzerine tıklandığında gri ekran kalması sorunu var kapat aç yapınca düzelmekte 
+ ilerleyen güncellemelerde düzeltilecektir
  
 Uygulamanın il sürümü https://github.com/ziya44-a/pedal-ffb-motor-yaz-l-m- buradaki gibidir
  ve sadece pedal ffb kitinde ABS TC Tekerlek kayması ve kilitlenmesi vardır
@@ -372,3 +374,4 @@ Turn racing data into real feedback.
 <img width="2559" height="1385" alt="Ekran görüntüsü 2026-11-20 125347" src="https://github.com/user-attachments/assets/bcd35b46-12d7-43c0-87c5-fe9966d8eb32" />
 <img width="2559" height="1392" alt="Ekran görüntüsü 2026-11-20 125401" src="https://github.com/user-attachments/assets/ee9fe451-71bb-4af3-af50-2147bbce394c" />
 <img width="2559" height="1393" alt="Ekran görüntüsü 2026-11-20 125336" src="https://github.com/user-attachments/assets/13216824-d57d-4632-b55c-5f1e4932c0e3" />
+<img width="1997" height="426" alt="Ekran görüntüsü 2026-11-20 130823" src="https://github.com/user-attachments/assets/442c5c02-499e-418e-a7bd-135a9e26a9dd" />
