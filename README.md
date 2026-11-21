@@ -26,6 +26,7 @@ Yerelde çalısıp hiçbir sekilde internete bağlanmamaktadır
 
 ---
  ZİP sürümünde hazır şekilde hepsi vardır, ve yaptığım gücellemeleri en sonda belirtiyor olacağım(V6 açık kodlu sürümdür) güncellemeler ve hata düzeltmelerini ayrı ZİP dosyası olarak(V7 veya daha üstü) ekleyeceğim. biriklmesi ve önemli olduğu durumda yeni sürüm olarak paylaşacağım.
+ Açık kodlar güncellenmeyecek yeni sürüme kadar
 ## ⚙️ Temel Özellikler
 
 ### 1. Pedal Haptic Feedback
