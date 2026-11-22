@@ -1,3 +1,4 @@
+!!Ac de çalışma hatası vermektedir sorunu en kısa sürede çözeceğim
 # 🏁 PitApex
 ### Open-Source Sim Racing Telemetry & Hardware Control
 
