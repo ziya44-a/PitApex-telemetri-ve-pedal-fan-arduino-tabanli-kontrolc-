@@ -1,4 +1,4 @@
-!!Ac de çalışma hatası vermektedir sorunu en kısa sürede çözeceğim
+!!Ac de çalışma hatası vermektedir sorunu en kısa sürede çözeceğim, AC de oyuna bağlanmadan motor arduino bağlantısını kesmeniz önerilir
 # 🏁 PitApex
 ### Open-Source Sim Racing Telemetry & Hardware Control
 
