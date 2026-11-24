@@ -381,3 +381,4 @@ Turn racing data into real feedback.
 <img width="2559" height="1392" alt="Ekran görüntüsü 2026-11-20 125401" src="https://github.com/user-attachments/assets/ee9fe451-71bb-4af3-af50-2147bbce394c" />
 <img width="2559" height="1393" alt="Ekran görüntüsü 2026-11-20 125336" src="https://github.com/user-attachments/assets/13216824-d57d-4632-b55c-5f1e4932c0e3" />
 <img width="1997" height="426" alt="Ekran görüntüsü 2026-11-20 130823" src="https://github.com/user-attachments/assets/442c5c02-499e-418e-a7bd-135a9e26a9dd" />
+V7 de radar sistemi getirildi ama AC desteği bağlantıları kapatıldı düzeltilene kadar
